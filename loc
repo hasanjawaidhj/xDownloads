@@ -1,0 +1,11 @@
+create table LOCATIONS
+(
+  date$       DATE default SYSDATE,
+  userid      VARCHAR2(30) default 'BACKEND',
+  locid       VARCHAR2(3) not null,
+  location    VARCHAR2(100),
+  abbreviate  VARCHAR2(10),
+  labeled     VARCHAR2(2),
+  parentlocid VARCHAR2(3),
+  active      CHAR(1) default 'Y'
+);

@@ -1,0 +1,12 @@
+                public function bulkInsert($proposalno, $params)
+                {
+                                $sql = "INSERT ALL ";
+                                for($a=0; $a < sizeof($params); $a++)
+                                {
+                                                $id = mt_rand();
+                                                $sql .= "INTO POS_QUESTIONNAIRE_ANSWER (NP1_PROPOSAL, NP2_SETNO, PPR_PRODCD, NU1_LIFE, CQN_CODE, CCN_COLUMNID, NQD_ANSWER, QUESTION_TYPE, QUESTION_CATEGORY, ID) VALUES ('{$proposalno}', {$params[$a][QAController::NP2_SETNO]}, '{$params[$a][QAController::PPR_PRODCD]}', '{$params[$a][QAController::NU1_LIFE]}', '{$params[$a][QAController::CQN_CODE]}', '{$params[$a][QAController::CCN_COLUMNID]}', '{$params[$a][QAController::NQD_ANSWER]}', '{$params[$a][QAController::QUESTION_TYPE]}', '{$params[$a][QAController::QUESTION_CATEGORY]}', {$id})";
+                                }
+                                $sql .= " SELECT * FROM dual";
+                                $result = $this->getDi()->getShared('dataSource')->execute($sql);
+                                return $result;
+                }

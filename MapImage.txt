@@ -1,0 +1,1 @@
+https://developers.google.com/maps/documentation/maps-static/dev-guide#ImageFormats
